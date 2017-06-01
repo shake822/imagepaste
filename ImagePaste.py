@@ -27,7 +27,7 @@ class ImagePasteCommand(sublime_plugin.TextCommand):
 			if 'text.html.markdown' in view.scope_name(pos.begin()):
 				view.insert(edit, pos.begin(), "![](%s)" % rel_fn)
 			else:
-				view.insert(edit, pos.begin(), "%s" % rel_fn)
+				view.insert(edit, pos.begin(), "<img src='%s' />" % rel_fn)
 			# only the first cursor add the path
 			break
 			
